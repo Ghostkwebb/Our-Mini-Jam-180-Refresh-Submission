@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class dragObject : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    bool draging = false;
+    Vector3 offset;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+    }
+
+    void OnMouseDown()
+    {
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        draging = true;   
+    }
+
+    void OnMouseUp()
+    {
+       draging = false; 
     }
 }
