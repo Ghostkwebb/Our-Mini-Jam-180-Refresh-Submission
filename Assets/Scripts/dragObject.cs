@@ -7,7 +7,9 @@ public class dragObject : MonoBehaviour
 
     void Update()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        if(draging){
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        }
     }
 
     void OnMouseDown()
