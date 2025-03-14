@@ -4,11 +4,12 @@ public class dragAll : MonoBehaviour
 {
     Transform dragging = null;
     Vector3 offset;
+    [SerializeField] LayerMask selectionLayer;
 
     void Update()
     {
         if(Input.GetMouseButtonDown(0)){
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, float.PositiveInfinity, LayerMask.GetMask("Selection"));
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, float.PositiveInfinity, selectionLayer);
             if(hit){
                 dragging = hit.transform;
                 offset = dragging.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
