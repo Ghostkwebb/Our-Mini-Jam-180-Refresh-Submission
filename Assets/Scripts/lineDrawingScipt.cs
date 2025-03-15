@@ -7,7 +7,6 @@ public class lineDrawingScipt : MonoBehaviour
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private List<Vector2> points;
-    Vector2 offset = new Vector2(0, -0.1f);
     private float currentLineLength = 0f;
 
     [Header("Material For line")]
@@ -52,7 +51,7 @@ public class lineDrawingScipt : MonoBehaviour
             lineRenderer.positionCount = points.Count;
             lineRenderer.SetPosition(points.Count - 1, worldPos);
 
-            Vector2 offset = new Vector2(0, 0.5f);
+            Vector2 offset = new Vector2(0, -0.1f);
             Vector2[] adjustedPoints = points.Select(p => (Vector2)p + offset).ToArray();
             edgeCollider.points = adjustedPoints;
         }

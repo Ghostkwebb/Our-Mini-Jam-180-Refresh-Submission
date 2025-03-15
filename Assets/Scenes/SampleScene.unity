@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceMaterial: {fileID: 0}
+  maxLineLength: 10
 --- !u!4 &751721171
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLines: 5
-  activeLine: {fileID: 751721170}
 --- !u!4 &1353767619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011565460087170716, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}
@@ -557,19 +557,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalScale.x
-      value: 25.423157
+      value: 53.167892
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.0819554
+      value: 2.388407
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0008625202
+      value: 0.0284
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.2811975
+      value: -13.411
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalPosition.z
