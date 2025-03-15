@@ -26,6 +26,11 @@ public class lineDrawingScipt : MonoBehaviour
 
     void Update()
     {
+        drawLine();
+    }
+
+    private void drawLine()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             points.Clear();
@@ -35,17 +40,17 @@ public class lineDrawingScipt : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f; 
+            mousePos.z = 0f;
 
             if (points.Count == 0 || Vector2.Distance(points[points.Count - 1], mousePos) > 0.1f)
             {
                 points.Add(mousePos);
                 lineRenderer.positionCount = points.Count;
                 lineRenderer.SetPosition(points.Count - 1, mousePos);
-                Vector2 offset = new Vector2(0, 0.5f); 
+                Vector2 offset = new Vector2(0, 0.5f);
                 Vector2[] adjustedPoints = points.Select(p => (Vector2)p + offset).ToArray();
                 edgeCollider.points = adjustedPoints;
             }
-        }    
+        }
     }
 }
