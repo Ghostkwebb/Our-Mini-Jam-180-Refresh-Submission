@@ -397,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 751721171}
   - component: {fileID: 751721170}
+  - component: {fileID: 751721172}
   m_Layer: 0
   m_Name: lineMaker
   m_TagString: Untagged
@@ -416,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1978e40d26f47a2ab1ebf3626e4187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceMaterial: {fileID: 0}
 --- !u!4 &751721171
 Transform:
   m_ObjectHideFlags: 0
@@ -431,6 +433,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751721172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751721169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6688133b1a7dd497092f3c8a1b76a766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLines: 5
+  activeLine: {fileID: 751721170}
 --- !u!4 &1353767619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011565460087170716, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}

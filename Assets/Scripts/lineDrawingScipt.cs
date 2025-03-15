@@ -8,9 +8,14 @@ public class lineDrawingScipt : MonoBehaviour
     private EdgeCollider2D edgeCollider;
     private List<Vector2> points;
     Vector2 offset = new Vector2(0, -0.1f);
+    private float currentLineLength = 0f;
 
+    [Header("Material For line")]
     public PhysicsMaterial2D bounceMaterial;
-    void Start()
+    [Header("Max Line Length")]
+    public float maxLineLength = 10f;
+
+    void Awake()
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
@@ -25,35 +30,31 @@ public class lineDrawingScipt : MonoBehaviour
         
         if (bounceMaterial != null) edgeCollider.sharedMaterial = bounceMaterial;
 
+        points = new List<Vector2>();
+
     }
 
-    void Update()
+    public void AddPoint(Vector3 worldPos)
     {
-        drawLine();
-    }
+        worldPos.z = 0f;
 
-    private void drawLine()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if (points.Count == 0 || Vector2.Distance(points[points.Count - 1], worldPos) > 0.1f)
         {
-            points.Clear();
-            lineRenderer.positionCount = 0;
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f;
-
-            if (points.Count == 0 || Vector2.Distance(points[points.Count - 1], mousePos) > 0.1f)
+            if (points.Count > 0)
             {
-                points.Add(mousePos);
-                lineRenderer.positionCount = points.Count;
-                lineRenderer.SetPosition(points.Count - 1, mousePos);
-                Vector2 offset = new Vector2(0, 0.5f);
-                Vector2[] adjustedPoints = points.Select(p => (Vector2)p + offset).ToArray();
-                edgeCollider.points = adjustedPoints;
+                float segmentLength = Vector2.Distance(points[points.Count - 1], worldPos);
+                if (currentLineLength + segmentLength > maxLineLength)
+                    return;
+                currentLineLength += segmentLength;
             }
+            
+            points.Add(worldPos);
+            lineRenderer.positionCount = points.Count;
+            lineRenderer.SetPosition(points.Count - 1, worldPos);
+
+            Vector2 offset = new Vector2(0, 0.5f);
+            Vector2[] adjustedPoints = points.Select(p => (Vector2)p + offset).ToArray();
+            edgeCollider.points = adjustedPoints;
         }
     }
-}
+}    
