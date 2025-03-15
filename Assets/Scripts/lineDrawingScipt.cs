@@ -8,6 +8,8 @@ public class lineDrawingScipt : MonoBehaviour
     private EdgeCollider2D edgeCollider;
     private List<Vector2> points;
     Vector2 offset = new Vector2(0, -0.1f);
+
+    public PhysicsMaterial2D bounceMaterial;
     void Start()
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -21,6 +23,7 @@ public class lineDrawingScipt : MonoBehaviour
         edgeCollider.edgeRadius = 0.3f;
         points = new List<Vector2>();
         
+        if (bounceMaterial != null) edgeCollider.sharedMaterial = bounceMaterial;
 
     }
 
