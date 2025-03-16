@@ -13,6 +13,8 @@ public class lineDrawingScipt : MonoBehaviour
     public PhysicsMaterial2D bounceMaterial;
     [Header("Max Line Length")]
     public float maxLineLength = 10f;
+    [Header("Line Thickness")]
+    public float lineWidth = 0.5f;
 
     void Awake()
     {
@@ -24,13 +26,17 @@ public class lineDrawingScipt : MonoBehaviour
         lineRenderer.numCapVertices = 5;
 
         edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
-        edgeCollider.edgeRadius = 0.3f;
+        edgeCollider.edgeRadius = lineWidth / 2f;
         points = new List<Vector2>();
-        
-        if (bounceMaterial != null) edgeCollider.sharedMaterial = bounceMaterial;
-
-        points = new List<Vector2>();
-
+    }
+    
+    public void SetBounceMaterial(PhysicsMaterial2D material)
+    {
+        bounceMaterial = material;
+        if (edgeCollider != null && bounceMaterial != null)
+        {
+            edgeCollider.sharedMaterial = bounceMaterial;
+        }
     }
 
     public void AddPoint(Vector3 worldPos)
@@ -51,9 +57,7 @@ public class lineDrawingScipt : MonoBehaviour
             lineRenderer.positionCount = points.Count;
             lineRenderer.SetPosition(points.Count - 1, worldPos);
 
-            Vector2 offset = new Vector2(0, -0.1f);
-            Vector2[] adjustedPoints = points.Select(p => (Vector2)p + offset).ToArray();
-            edgeCollider.points = adjustedPoints;
+            edgeCollider.points = points.ToArray();
         }
     }
 }    

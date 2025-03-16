@@ -417,8 +417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1978e40d26f47a2ab1ebf3626e4187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceMaterial: {fileID: 0}
+  bounceMaterial: {fileID: 6200000, guid: 8abf9c91ee981c64091d7450b99a5275, type: 2}
   maxLineLength: 10
+  lineWidth: 0.5
 --- !u!4 &751721171
 Transform:
   m_ObjectHideFlags: 0
@@ -447,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLines: 5
+  lineBounceMaterial: {fileID: 6200000, guid: 8abf9c91ee981c64091d7450b99a5275, type: 2}
 --- !u!4 &1353767619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011565460087170716, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}
@@ -538,6 +540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4414245624895137995, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5568303030235530444, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}
       propertyPath: m_Name
       value: Circle
@@ -557,7 +563,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalScale.x
-      value: 53.167892
+      value: 54.438606
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalScale.y
@@ -565,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0284
+      value: -0.6074
       objectReference: {fileID: 0}
     - target: {fileID: 4693153996980881101, guid: 471c110a8f3ec465291426833e2cc6da, type: 3}
       propertyPath: m_LocalPosition.y

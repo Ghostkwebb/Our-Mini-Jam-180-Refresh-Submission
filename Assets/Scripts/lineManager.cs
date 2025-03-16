@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class LineManager : MonoBehaviour
 {
     public int maxLines = 5; 
+    public PhysicsMaterial2D lineBounceMaterial;
     private List<GameObject> drawnLines = new List<GameObject>();
     private lineDrawingScipt activeLine = null;
 
@@ -20,6 +21,7 @@ public class LineManager : MonoBehaviour
             {
                 GameObject newLineGO = new GameObject("Line");
                 activeLine = newLineGO.AddComponent<lineDrawingScipt>();
+                activeLine.SetBounceMaterial(lineBounceMaterial);
                 drawnLines.Add(newLineGO);
             }
         }
