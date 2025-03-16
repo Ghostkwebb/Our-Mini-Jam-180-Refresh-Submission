@@ -3,9 +3,13 @@ using System.Collections;
 
 public class springBoard : MonoBehaviour
 {
+    [Header("Spring Board Settings")]
+    [Header("Rotation Settings")]
     [SerializeField] private float rotateAngle = 30f;
     [SerializeField] private float rotationSpeed = 5f;
+    [Header("Launch Settings")]
     [SerializeField] private float launchForce = 10f;
+
     private bool isRotating = false;
     private float currentRotation = 0f;
     private float targetRotation;
