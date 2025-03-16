@@ -520,15 +520,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189863796417267009, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189863796417267009, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189863796417267009, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189863796417267009, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -545,6 +545,14 @@ PrefabInstance:
     - target: {fileID: 2445215429817255238, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
       propertyPath: m_Name
       value: springBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447132077064365207, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976112293773015973, guid: d4eedbee2a52046b197ccbb3d1f094fa, type: 3}
+      propertyPath: launchForce
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
