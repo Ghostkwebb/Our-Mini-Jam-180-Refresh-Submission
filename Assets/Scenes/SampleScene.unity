@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLines: 3
   lineBounceMaterial: {fileID: 6200000, guid: 8abf9c91ee981c64091d7450b99a5275, type: 2}
-  maxLineLength: 100
+  maxLineLength: 15
 --- !u!4 &1353767619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011565460087170716, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}
