@@ -8,10 +8,9 @@ public class lineDrawingScipt : MonoBehaviour
     public PhysicsMaterial2D bounceMaterial;
     [Header("Line Thickness")]
     public float lineWidth = 0.5f;
-    [Header("-----------IGNORE THIS--------------")]
-    public float maxLineLength = 10f;
+    [HideInInspector]public float maxLineLength = 10f;
 
-    
+
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private List<Vector2> points;
