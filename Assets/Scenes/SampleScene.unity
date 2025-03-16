@@ -418,8 +418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceMaterial: {fileID: 6200000, guid: 8abf9c91ee981c64091d7450b99a5275, type: 2}
-  maxLineLength: 10
   lineWidth: 0.5
+  maxLineLength: 10
 --- !u!4 &751721171
 Transform:
   m_ObjectHideFlags: 0
@@ -447,8 +447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6688133b1a7dd497092f3c8a1b76a766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLines: 5
+  maxLines: 3
   lineBounceMaterial: {fileID: 6200000, guid: 8abf9c91ee981c64091d7450b99a5275, type: 2}
+  maxLineLength: 100
 --- !u!4 &1353767619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011565460087170716, guid: 17a5f703155cf44ce94f91d30a5deb8a, type: 3}

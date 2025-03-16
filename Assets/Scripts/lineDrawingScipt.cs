@@ -4,18 +4,18 @@ using System.Linq;
 
 public class lineDrawingScipt : MonoBehaviour
 {
+    [Header("Material For line")]
+    public PhysicsMaterial2D bounceMaterial;
+    [Header("Line Thickness")]
+    public float lineWidth = 0.5f;
+    [Header("-----------IGNORE THIS--------------")]
+    public float maxLineLength = 10f;
+
+    
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private List<Vector2> points;
     private float currentLineLength = 0f;
-
-    [Header("Material For line")]
-    public PhysicsMaterial2D bounceMaterial;
-    [Header("Max Line Length")]
-    public float maxLineLength = 10f;
-    [Header("Line Thickness")]
-    public float lineWidth = 0.5f;
-
     void Awake()
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
